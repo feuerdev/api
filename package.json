@@ -4,7 +4,8 @@
   "description": "Simple API Stub",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/api.js"
+    "start": "tsc && node dist/api.js",
+    "deploy": "git pull && npm install && npm start"
   },
   "author": "jannik@feuer.io",
   "license": "ISC",
