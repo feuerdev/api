@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000
 const app = express()
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
-app.use(cors)
+app.use(cors())
 
 //Start Webserver
 app.listen(PORT, function() {
