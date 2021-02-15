@@ -5,6 +5,7 @@ dotenv.config()
 //Imports
 import express from "express"
 import bodyparser from "body-parser"
+import cors from "cors"
 
 //Routers
 import tarkov from "./tarkov"
@@ -14,9 +15,7 @@ import ddns from "./ddns"
 const PORT = process.env.PORT || 3000;
 
 //Init Webserver
-const app = express();
-app.use(bodyparser.urlencoded({ extended: true }));
-app.use(bodyparser.json());
+app.use(cors)
 
 //Start Webserver
 app.listen(PORT, function() {
