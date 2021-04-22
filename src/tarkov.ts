@@ -37,10 +37,10 @@ router.post("/tarkov/items/update-value", function(req, res) {
   let value = req.body.value
   console.log("requested change on "+guid+" value:"+value)
   const connection = mysql.createConnection({
-    host     : 'mail.feuer.io',
-    user     : 'api',
-    password : 'OIjgRhdi9sTvtycSNIcO',
-    database : 'api'
+    host     : process.env.MYSQL_HOST,
+    user     : process.env.MYSQL_USER,
+    password : process.env.MYSQL_PASSWORD,
+    database : process.env.MYSQL_DATABASE
   })
   connection.connect()
   connection.query('UPDATE tarkov SET value= '+value+' WHERE guid LIKE "'+guid+'"', function (error, results, fields) {
